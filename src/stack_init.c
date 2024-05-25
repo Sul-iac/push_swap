@@ -12,23 +12,6 @@
 
 #include "push_swap.h"
 
-int	error_synthax(char *str_n)
-{
-	if(!(*str_n == '+' 
-					   || *str_n == '-' 
-					   || (*str_n >= '0' && *str_n <= '9')))
-				return(1);
-	if((*str_n == '+' 
-					  || *str_n == '-')
-					  || !(*str_n >= '0' && *str_n <= '9'))
-				return(1);
-	while(*++str_n)
-	{
-		if(!(*str_n >= '0' && *str_n <= '9'))
-			return(1);
-	}
-	return(0);
-}
 
 t_stack_node *get_cheapest(t_stack_node *stack)
 {

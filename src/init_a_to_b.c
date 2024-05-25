@@ -33,7 +33,7 @@ void	current_index(t_stack_node *stack)
 	}
 }
 
-void	set_target_a(t_stack_node *a, t_stack_node *b) //on cherche une node cible pour envoyer A dans B
+void	set_target_a(t_stack_node *a, t_stack_node *b) 
 {
 	t_stack_node	*current_b;
 	t_stack_node	*target_node;
@@ -56,7 +56,7 @@ void	set_target_a(t_stack_node *a, t_stack_node *b) //on cherche une node cible 
 		if(best_match_index == LONG_MIN)
 			a->target_node = find_max(b);
 		else
-			a->target_node = target_node; //on set la target
+			a->target_node = target_node; 
 		a = a->next;
 	}
 }
