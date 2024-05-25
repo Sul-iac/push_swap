@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/29 16:37:09 by qbarron           #+#    #+#             */
-/*   Updated: 2024/03/29 16:37:09 by qbarron          ###   ########.fr       */
+/*   Created: 2024/05/15 11:35:17 by qbarron           #+#    #+#             */
+/*   Updated: 2024/05/15 11:35:17 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_message(char *str)
+void	rotate_both(t_stack_node **a,
+					t_stack_node **b,
+					t_stack_node *cheapest_node)
 {
-	ft_putstr_fd("\e[31m", 2);
-	ft_putstr_fd(str, 2);
-	ft_putstr_fd("\e[0m", 2);
-	exit(0);
+	while(*b != cheapest_node->target_node && *a != cheapest_node)
+		rr(a, b, false);
+	current_index(*a);
+	current_index(*b);
 }
-
-
 
