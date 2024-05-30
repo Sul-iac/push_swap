@@ -39,6 +39,7 @@ OBJS = $(addprefix $(OBJ_PATH)/, $(SRC_FILES:.c=.o))
 BONUS_SRCS = $(addprefix $(SRC_PATH)/, $(BONUS_FILES))
 BONUS_OBJS = $(addprefix $(OBJ_PATH)/, $(BONUS_FILES:.c=.o))
 
+
 .PHONY: all clean fclean re bonus
 
 all: $(NAME)
@@ -50,7 +51,7 @@ bonus: $(BONUS_OBJS)
 	@ar rcs $(NAME) $^
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	$(CC) $(CFLAGS) -I$(INC_PATH) -o $@ -c $<
+	@$(CC) $(CFLAGS) -I$(INC_PATH) -o $@ -c $<
 
 $(OBJ_PATH):
 	mkdir -p $(OBJ_PATH)
